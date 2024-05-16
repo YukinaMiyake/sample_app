@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def new
-    @lists = List.new
+    @list = List.new
   end
 
   def create
