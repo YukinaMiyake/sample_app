@@ -25,13 +25,16 @@
           <%= link_to "Lists", lists_path %>
         </li>
         <li class="nav-list-item">
-          <% link_to "New List", new_list_path %>
+          <%= link_to "New List", new_list_path %>
         </li>
       </ul>
     </nav>
     
     <main>
-    <%= yield %>
+      <% flash.each do |message_type, message| %>
+        <div class="flash-message"><%= message_type %><%= message %></div>
+      <% end %>
+      <%= yield %>
     </main>
   </body>
 </html>
